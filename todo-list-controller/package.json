@@ -1,0 +1,39 @@
+{
+    "name": "todo-list-controller",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "start": "node index"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "agenda": "^5.0.0",
+        "async": "^3.2.3",
+        "aws-sdk": "^2.1194.0",
+        "axios": "^0.25.0",
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.19.1",
+        "cors": "^2.8.5",
+        "dayjs": "^1.10.7",
+        "dotenv": "^16.0.0",
+        "download": "^8.0.0",
+        "exceljs": "^4.3.0",
+        "express": "^4.17.2",
+        "express-ws": "^5.0.2",
+        "jest": "^29.0.3",
+        "joi": "^17.6.0",
+        "jsonwebtoken": "^8.5.1",
+        "log4js": "^6.7.0",
+        "moment": "^2.29.1",
+        "mongoose": "^6.2.0",
+        "node-cron": "^3.0.3",
+        "node-xlsx": "^0.21.0",
+        "pacs-controller": "file:",
+        "prettier": "^2.8.4",
+        "todo-list-controller": "file:",
+        "validator": "^13.7.0"
+    }
+}
