@@ -21,6 +21,10 @@ const RoutingList = (app) => {
         {
             path: "/tasks",
             route: taskRoute
+        },
+        {
+            path: "/users",
+            route: userRoute.router
         }
     ]
 
