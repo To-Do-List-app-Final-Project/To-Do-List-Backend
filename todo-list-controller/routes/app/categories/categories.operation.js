@@ -1,16 +1,13 @@
 const util = require("../../../exports/util")
 const Categories = require("../../../models/categories")
-const { getNewCategoriesCode } = require("../../../services/newCode.services");
 
 const create = async (req, res) => {
     try {
         const { title, color } = req.body
-        const newCode = await getNewCategoriesCode();
         let data = {
             userId: req.user?._id,
             title: title,
-            color: color,
-            code: newCode
+            color: color
         }
         let rsp = await new Categories(data).save().catch((error) => {
             throw error

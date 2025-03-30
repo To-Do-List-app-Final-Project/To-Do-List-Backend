@@ -84,10 +84,30 @@ const destroy = async (req, res) => {
 const lists = async (req, res) => {
     try {
         const userId = req.user?._id;
+        let { categoryId, repeat, priority, status, reminderDate, scheduleDate } = req.query;
         let query = { isDeleted: { $ne: true }, userId: util.objectId(userId) }
 
         let pageNo = util.defaultPageNo(req.query.pageNo)
         let pageSize = util.defaultPageSize(req.query.pageSize)
+
+        if (util.notEmpty(categoryId)) {
+            query.categoryId = util.objectId(categoryId);
+        }
+
+        if (util.notEmpty(priority)) {
+            query.priority = priority
+        }
+
+        if (util.notEmpty(repeat)) {
+            query.repeat = repeat
+        }
+
+        if (util.notEmpty(status)) {
+            query.status = status
+        }
+
+        query = util.getQueryBetweenTime(query, reminderDate?.start, reminderDate?.end, "reminderDate")
+        query = util.getQueryBetweenTime(query, scheduleDate?.start, scheduleDate?.end, "scheduleDate")
 
         let count = await Tasks.find(query).count()
         if (count == 0) {

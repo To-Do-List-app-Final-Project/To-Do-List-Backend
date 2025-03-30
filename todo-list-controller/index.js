@@ -42,7 +42,7 @@ contextUtils.run(async () => {
         .connect(process.env.DATABASE_CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true })
         .then((__, err) => {
             if (!err) {
-                console.log("Connected to PACS Mongo Database")
+                console.log("Connected to TODO-LIST Mongo Database")
             } else {
                 console.log(err)
                 console.log(`${APP_NAME} V${VERSION_NUMBER} - ${moment.utc().format("LLL")} - FAILED TO RUN`)

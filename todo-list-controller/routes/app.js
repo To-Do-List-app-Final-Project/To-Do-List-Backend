@@ -28,7 +28,6 @@ const RoutingList = (app) => {
     routerApp.post("/users/login", userRoute.Operation.login)
     routerApp.post("/users/register", userRoute.Operation.register)
     routerApp.post("/users/forgetPassword", userRoute.Operation.requestResetPwd)
-    routerApp.post("/users/newPassword", userRoute.Operation.setNewPassword)
     routerApp.use(validateMiddleware.power()) //增加登陆中间件的验证
     routerApp.get("/users/me", userRoute.Operation.me)
 

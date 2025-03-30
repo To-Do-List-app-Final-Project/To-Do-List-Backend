@@ -3,12 +3,6 @@ const { pacsdb, mongoose } = require("./connection")
 // Floor基本信息操作
 const categoriesSchema = mongoose.Schema(
     {
-        code: {
-            type: String,
-            unique: true,
-            trim: true,
-            required: [true, "Category Code must not be null"],
-        },
         userId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "users",
@@ -16,10 +10,6 @@ const categoriesSchema = mongoose.Schema(
         title: {
             type: String,
             trim: true,
-        },
-        status: {
-            type: Boolean,
-            default: true,
         },
         color: {
             type: String,
